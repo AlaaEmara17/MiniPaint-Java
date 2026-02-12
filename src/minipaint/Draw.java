@@ -247,11 +247,11 @@ public class Draw extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -472,10 +472,11 @@ public class Draw extends javax.swing.JFrame {
                 jComboBox1.addItem(name);
                 shapeMap.put(name, r);
 
-            } catch (NumberFormatException e) {
-
+            }catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Error: Please ensure the input contains valid numbers for X and Y. ", "Error", JOptionPane.ERROR_MESSAGE);
                 System.out.println("Error: Please ensure the input contains valid numbers for X and Y.");
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error in input: ", "Error", JOptionPane.ERROR_MESSAGE);
                 System.out.println("Error in input: " + e.getMessage());
             }
         }
@@ -525,9 +526,10 @@ public class Draw extends javax.swing.JFrame {
                 jComboBox1.addItem(name);
                 shapeMap.put(name, s);
             } catch (NumberFormatException e) {
-
+                JOptionPane.showMessageDialog(null, "Error: Please ensure the input contains valid numbers for X and Y. ", "Error", JOptionPane.ERROR_MESSAGE);
                 System.out.println("Error: Please ensure the input contains valid numbers for X and Y.");
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error in input: ", "Error", JOptionPane.ERROR_MESSAGE);
                 System.out.println("Error in input: " + e.getMessage());
             }
 
@@ -578,9 +580,10 @@ public class Draw extends javax.swing.JFrame {
                 jComboBox1.addItem(name);
                 shapeMap.put(name, l);
             } catch (NumberFormatException e) {
-
+                JOptionPane.showMessageDialog(null, "Error: Please ensure the input contains valid numbers for X and Y. ", "Error", JOptionPane.ERROR_MESSAGE);
                 System.out.println("Error: Please ensure the input contains valid numbers for X and Y.");
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error in input: ", "Error", JOptionPane.ERROR_MESSAGE);
                 System.out.println("Error in input: " + e.getMessage());
             }
         }
@@ -622,9 +625,10 @@ public class Draw extends javax.swing.JFrame {
                 names.add(name);
                 jComboBox1.addItem(name);
             } catch (NumberFormatException e) {
-
+                JOptionPane.showMessageDialog(null, "Error: Please ensure the input contains valid numbers for X and Y. ", "Error", JOptionPane.ERROR_MESSAGE);
                 System.out.println("Error: Please ensure the input contains valid numbers for X and Y.");
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error in input: ", "Error", JOptionPane.ERROR_MESSAGE);
                 System.out.println("Error in input: " + e.getMessage());
             }
 

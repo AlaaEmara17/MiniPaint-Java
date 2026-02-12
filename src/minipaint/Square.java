@@ -19,28 +19,17 @@ public class Square extends Drawshape {
     private double side;
 
     @Override
-    public void setProperties(Map<String, Double> properties) {
+     public void setProperties(Map<String, Double> properties) {
         if (properties == null) {
             throw new IllegalArgumentException("Properties map cannot be null");
         }
         
-        // Validate that both coordinates are provided
-        boolean hasX = properties.containsKey("centerX");
-        boolean hasY = properties.containsKey("centerY");
+      
+        if ( properties.containsKey("centerX")&& properties.containsKey("centerY")) {
+               Point center = new Point(properties.get("centerX").intValue(), properties.get("centerY").intValue());
+                super.setPosition(center);
         
-        if (hasX && !hasY) {
-            throw new IllegalArgumentException("Missing centerY coordinate. Both centerX and centerY are required.");
         }
-        if (!hasX && hasY) {
-            throw new IllegalArgumentException("Missing centerX coordinate. Both centerX and centerY are required.");
-        }
-        if (!hasX && !hasY) {
-            throw new IllegalArgumentException("Missing center coordinates. Both centerX and centerY are required.");
-        }
-        
-        // Set position - we now know both coordinates exist
-        Point center = new Point(properties.get("centerX").intValue(), properties.get("centerY").intValue());
-        super.setPosition(center);
         
         if (properties.containsKey("side")) {
             double sideValue = properties.get("side");
@@ -50,7 +39,6 @@ public class Square extends Drawshape {
             side = sideValue;
         }
     }
-
     @Override
     public Map<String, Double> getProperties() {
         Map<String, Double> properties = new HashMap<>();

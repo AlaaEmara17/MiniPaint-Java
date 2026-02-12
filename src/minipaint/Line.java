@@ -37,23 +37,12 @@ public class Line extends Drawshape {
             throw new IllegalArgumentException("Properties map cannot be null");
         }
         
-        // Validate that both coordinates are provided
-        boolean hasX = properties.containsKey("centerX");
-        boolean hasY = properties.containsKey("centerY");
-        
-        if (hasX && !hasY) {
-            throw new IllegalArgumentException("Missing centerY coordinate. Both centerX and centerY are required.");
-        }
-        if (!hasX && hasY) {
-            throw new IllegalArgumentException("Missing centerX coordinate. Both centerX and centerY are required.");
-        }
-        if (!hasX && !hasY) {
-            throw new IllegalArgumentException("Missing center coordinates. Both centerX and centerY are required.");
-        }
-        
-        // Set position - we now know both coordinates exist
-        Point position = new Point(properties.get("centerX").intValue(), properties.get("centerY").intValue());
+       
+        if (properties.containsKey("centerX")&&  properties.containsKey("centerY")) {
+         Point position = new Point(properties.get("centerX").intValue(), properties.get("centerY").intValue());
         super.setPosition(position);
+        }
+       
         
         if (properties.containsKey("angle")) {
             double angleValue = properties.get("angle");
